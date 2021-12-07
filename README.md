@@ -29,4 +29,7 @@ optional arguments:
   --margin MARGIN       size of the white margin around the color palette (as a fraction of the size of the color chip
   --out_file OUT_FILE   Specify to override the output filepath.
   --random_colors       Use this flag to initialize kmeans with random colors
+  --sample_extreme_colors
+                        Experimental method that tries to subsample the input image as evenly as possible within the RGB cube, therefore removing duplicate colors.
+  --hsv_initialization  Initialize KMeans using colors distributed by hue rather than by luminance
 ```
