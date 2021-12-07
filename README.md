@@ -16,7 +16,7 @@ Run the following command:
 python color_palette.py --file path/to/file.jpg
 ```
 
-This will generate a new file in the same folder as your original image, but with the word `_palette` appended to the file name
+This will generate a new file in the same folder as your original image, but with the word `_palette` appended to the file name. This script should work with whatever file extensiosn that the imageio library supports. Currently the code expects 8-bit files.
 
 You can optionally use the following arguments:
 
