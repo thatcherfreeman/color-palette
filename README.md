@@ -1,6 +1,6 @@
 # Color Palette Generator
 
-Generates a color palette for a given image and adds it to the bottom of the frame.
+Generates a color palette for a given image and adds it to the bottom of the frame. The colors are selected using a K-Means clustering algorithm.
 
 ## Installation instructions
 
