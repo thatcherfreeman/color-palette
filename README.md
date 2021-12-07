@@ -32,4 +32,6 @@ optional arguments:
   --sample_extreme_colors
                         Experimental method that tries to subsample the input image as evenly as possible within the RGB cube, therefore removing duplicate colors.
   --hsv_initialization  Initialize KMeans using colors distributed by hue rather than by luminance
+  --reduced_color_output
+                        Constrain output image to the selected colors, showing which color each pixel was closest to.
 ```

@@ -67,6 +67,11 @@ if __name__ == '__main__':
 		action='store_true',
 		help='Initialize KMeans using colors distributed by hue rather than by luminance',
 	)
+	args.add_argument(
+		'--reduced_color_output',
+		action='store_true',
+		help='Constrain output image to the selected colors, showing which color each pixel was closest to.',
+	)
 	args = args.parse_args()
 	fn = args.file
 	if args.out_file is None:
@@ -113,6 +118,14 @@ if __name__ == '__main__':
 		init=inits,
 		n_init=1,
 	).fit(samples)
+
+	# Convert images to just the num_colors colors
+	if args.reduced_color_output:
+		img_out_dists = kmeans.transform(img.reshape(i_H * i_W, i_C))
+		cluster_idxs = np.argmin(img_out_dists, axis=1)
+		img_out_colors = kmeans.cluster_centers_[cluster_idxs]
+		assert img_out_colors.shape[-1] == 3
+		img = img_out_colors.reshape(i_H, i_W, i_C)
 
 	# Sort colors darkest to brightest
 	print(f'Drawing image....')
